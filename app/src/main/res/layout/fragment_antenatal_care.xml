@@ -79,8 +79,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="@dimen/dp_100"
-                            android:layout_height="@dimen/dp_100"
+                            android:layout_width="@dimen/dp_80"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/margin_small"
                             android:adjustViewBounds="true"
                             android:contentDescription="@string/app_name"
@@ -120,8 +120,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="@dimen/dp_100"
-                            android:layout_height="@dimen/dp_100"
+                            android:layout_width="@dimen/dp_80"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/margin_small"
                             android:adjustViewBounds="true"
                             android:contentDescription="@string/app_name"
@@ -170,8 +170,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="@dimen/dp_100"
-                            android:layout_height="@dimen/dp_100"
+                            android:layout_width="@dimen/dp_80"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/margin_small"
                             android:adjustViewBounds="true"
                             android:contentDescription="@string/app_name"
@@ -211,8 +211,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="@dimen/dp_100"
-                            android:layout_height="@dimen/dp_100"
+                            android:layout_width="@dimen/dp_80"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/margin_small"
                             android:adjustViewBounds="true"
                             android:contentDescription="@string/app_name"
@@ -260,8 +260,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="@dimen/dp_100"
-                            android:layout_height="@dimen/dp_100"
+                            android:layout_width="@dimen/dp_80"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/margin_small"
                             android:adjustViewBounds="true"
                             android:contentDescription="@string/app_name"
@@ -301,8 +301,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="@dimen/dp_100"
-                            android:layout_height="@dimen/dp_100"
+                            android:layout_width="@dimen/dp_80"
+                            android:layout_height="@dimen/dp_80"
                             android:layout_margin="@dimen/margin_small"
                             android:adjustViewBounds="true"
                             android:contentDescription="@string/app_name"

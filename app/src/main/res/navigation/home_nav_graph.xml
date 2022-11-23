@@ -13,6 +13,8 @@
         <action
             android:id="@+id/action_homeFragment_to_safeDeliveryFragment"
             app:destination="@id/safeDeliveryFragment"
+            app:restoreState="true"
+            app:popUpToSaveState="true"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
