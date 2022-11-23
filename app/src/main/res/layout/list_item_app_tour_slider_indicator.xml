@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data class="AppTourSliderIndicatorListItemBinding"/>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/indicator"
+        android:layout_width="@dimen/dp_12"
+        android:layout_height="@dimen/dp_12"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        app:strokeColor="@color/theme_red"
+        app:strokeWidth="@dimen/dp_1"
+        app:cardElevation="@dimen/no_margin"
+        app:cardCornerRadius="@dimen/dp_6"
+        app:cardBackgroundColor="@color/theme_red"/>
+</layout>

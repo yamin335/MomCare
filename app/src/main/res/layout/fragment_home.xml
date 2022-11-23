@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data class="HomeFragmentBinding">
+        <variable
+            name="viewModel"
+            type="com.mom2b.androidApp.ui.home.HomeViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/theme_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/customToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/theme_pink"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/appLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_very_small"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/mom2b_txt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/no_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/customToolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/customToolbar">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/sliderView"
+                        android:layout_width="@dimen/no_margin"
+                        android:layout_height="@dimen/slider_height"
+                        android:clipToPadding="false"
+                        android:clipChildren="false"
+                        app:layout_constraintBottom_toTopOf="@id/indicatorView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/indicatorView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:layout_marginEnd="@dimen/margin_standard"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:itemCount="10"
+                        tools:listitem="@layout/list_item_slider_indicator" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/our_services"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:layout_marginTop="@dimen/margin_standard"
+                    android:textColor="@color/theme_black"
+                    android:textSize="@dimen/text_medium"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:layout_marginTop="@dimen/margin_small">
+
+                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                        android:id="@+id/cardMom"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/margin_standard"
+                        app:rippleColor="@color/theme_background"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:contentPadding="@dimen/no_margin"
+                        app:cardUseCompatPadding="false"
+                        app:cardElevation="@dimen/no_margin"
+                        app:cardCornerRadius="@dimen/margin_small"
+                        app:cardBackgroundColor="@android:color/white">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_margin="@dimen/margin_small"
+                                android:adjustViewBounds="true"
+                                android:contentDescription="@string/app_name"
+                                app:srcCompat="@drawable/mom_and_newborn" />
+
+                            <TextView
+                                android:id="@+id/titlePathology"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin_small"
+                                android:layout_marginEnd="@dimen/margin_small"
+                                android:layout_marginBottom="@dimen/margin_small"
+                                android:visibility="gone"
+                                android:ellipsize="end"
+                                android:textSize="@dimen/text_small"
+                                android:text="@string/pathology"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:textColor="@color/theme_black" />
+                        </LinearLayout>
+                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                        android:id="@+id/cardAntenatal"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/margin_standard"
+                        app:rippleColor="@color/theme_background"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:contentPadding="@dimen/no_margin"
+                        app:cardUseCompatPadding="false"
+                        app:cardElevation="@dimen/no_margin"
+                        app:cardCornerRadius="@dimen/margin_small"
+                        app:cardBackgroundColor="@android:color/white">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_margin="@dimen/margin_small"
+                                android:adjustViewBounds="true"
+                                android:contentDescription="@string/app_name"
+                                app:srcCompat="@drawable/antenatal_and_postnatal" />
+
+                            <TextView
+                                android:id="@+id/titleDoctor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin_small"
+                                android:layout_marginEnd="@dimen/margin_small"
+                                android:layout_marginBottom="@dimen/margin_small"
+                                android:ellipsize="end"
+                                android:visibility="gone"
+                                android:textSize="@dimen/text_small"
+                                android:text="@string/doctor"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:textColor="@color/theme_black" />
+                        </LinearLayout>
+                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                        android:id="@+id/cardSafe"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:rippleColor="@color/theme_background"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:contentPadding="@dimen/no_margin"
+                        app:cardUseCompatPadding="false"
+                        app:cardElevation="@dimen/no_margin"
+                        app:cardCornerRadius="@dimen/margin_small"
+                        app:cardBackgroundColor="@android:color/white">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_100"
+                                android:layout_margin="@dimen/margin_small"
+                                android:adjustViewBounds="true"
+                                android:contentDescription="@string/app_name"
+                                app:srcCompat="@drawable/save_and_improved_delivery" />
+
+                            <TextView
+                                android:id="@+id/titleNurse"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin_small"
+                                android:layout_marginEnd="@dimen/margin_small"
+                                android:layout_marginBottom="@dimen/margin_small"
+                                android:ellipsize="end"
+                                android:visibility="gone"
+                                android:textSize="@dimen/text_small"
+                                android:text="@string/nurse"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:textColor="@color/theme_black" />
+                        </LinearLayout>
+                    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/choose_your_service"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:layout_marginTop="@dimen/margin_standard"
+                    android:textColor="@color/theme_black"
+                    android:textSize="@dimen/text_medium"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:layout_marginTop="@dimen/margin_small">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                            android:id="@+id/prepareTest"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="@dimen/margin_standard"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:rippleColor="@color/theme_background"
+                            app:contentPadding="@dimen/no_margin"
+                            app:cardUseCompatPadding="false"
+                            app:cardElevation="@dimen/no_margin"
+                            app:cardCornerRadius="@dimen/margin_small"
+                            app:cardBackgroundColor="@android:color/white">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_40"
+                                    android:layout_height="@dimen/dp_40"
+                                    android:layout_margin="@dimen/margin_small"
+                                    android:adjustViewBounds="true"
+                                    android:contentDescription="@string/app_name"
+                                    app:srcCompat="@drawable/icons8_infusion_pumps_100" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/margin_small"
+                                    android:ellipsize="end"
+                                    android:textSize="@dimen/text_small"
+                                    android:text="@string/prepare_for_a_test"
+                                    android:maxLines="3"
+                                    android:textColor="@color/theme_black" />
+                            </LinearLayout>
+                        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                            android:id="@+id/bookAppointment"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:rippleColor="@color/theme_background"
+                            app:contentPadding="@dimen/no_margin"
+                            app:cardUseCompatPadding="false"
+                            app:cardElevation="@dimen/no_margin"
+                            app:cardCornerRadius="@dimen/margin_small"
+                            app:cardBackgroundColor="@android:color/white">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_40"
+                                    android:layout_height="@dimen/dp_40"
+                                    android:layout_margin="@dimen/margin_small"
+                                    android:adjustViewBounds="true"
+                                    android:contentDescription="@string/app_name"
+                                    app:srcCompat="@drawable/icons8_schedule_100" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/margin_small"
+                                    android:ellipsize="end"
+                                    android:textSize="@dimen/text_small"
+                                    android:text="@string/book_an_appointment"
+                                    android:maxLines="3"
+                                    android:textColor="@color/theme_black" />
+                            </LinearLayout>
+                        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_standard"
+                        android:orientation="horizontal">
+                        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                            android:id="@+id/seeMyResults"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="@dimen/margin_standard"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:rippleColor="@color/theme_background"
+                            app:contentPadding="@dimen/no_margin"
+                            app:cardUseCompatPadding="false"
+                            app:cardElevation="@dimen/no_margin"
+                            app:cardCornerRadius="@dimen/margin_small"
+                            app:cardBackgroundColor="@android:color/white">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_40"
+                                    android:layout_height="@dimen/dp_40"
+                                    android:layout_margin="@dimen/margin_small"
+                                    android:adjustViewBounds="true"
+                                    android:contentDescription="@string/app_name"
+                                    app:srcCompat="@drawable/icons8_inspection_100" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/margin_small"
+                                    android:ellipsize="end"
+                                    android:textSize="@dimen/text_small"
+                                    android:text="@string/my_test_results"
+                                    android:maxLines="3"
+                                    android:textColor="@color/theme_black" />
+                            </LinearLayout>
+                        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                            android:id="@+id/bloodTestAtHome"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:rippleColor="@color/theme_background"
+                            app:contentPadding="@dimen/no_margin"
+                            app:cardUseCompatPadding="false"
+                            app:cardElevation="@dimen/no_margin"
+                            app:cardCornerRadius="@dimen/margin_small"
+                            app:cardBackgroundColor="@android:color/white">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_40"
+                                    android:layout_height="@dimen/dp_40"
+                                    android:layout_margin="@dimen/margin_small"
+                                    android:adjustViewBounds="true"
+                                    android:contentDescription="@string/app_name"
+                                    app:srcCompat="@drawable/icons8_syringe_100" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/margin_small"
+                                    android:ellipsize="end"
+                                    android:textSize="@dimen/text_small"
+                                    android:text="@string/blood_test_at_home"
+                                    android:maxLines="3"
+                                    android:textColor="@color/theme_black" />
+                            </LinearLayout>
+                        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_standard"
+                        android:orientation="horizontal">
+                        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                            android:id="@+id/patientGuide"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="@dimen/margin_standard"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:rippleColor="@color/theme_background"
+                            app:contentPadding="@dimen/no_margin"
+                            app:cardUseCompatPadding="false"
+                            app:cardElevation="@dimen/no_margin"
+                            app:cardCornerRadius="@dimen/margin_small"
+                            app:cardBackgroundColor="@android:color/white">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_40"
+                                    android:layout_height="@dimen/dp_40"
+                                    android:layout_margin="@dimen/margin_small"
+                                    android:adjustViewBounds="true"
+                                    android:contentDescription="@string/app_name"
+                                    app:srcCompat="@drawable/icons8_heart_health_100" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/margin_small"
+                                    android:ellipsize="end"
+                                    android:textSize="@dimen/text_small"
+                                    android:text="@string/virtual_healthcare_patient_guide"
+                                    android:maxLines="3"
+                                    android:textColor="@color/theme_black" />
+                            </LinearLayout>
+                        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                            android:id="@+id/findALocation"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:rippleColor="@color/theme_background"
+                            app:contentPadding="@dimen/no_margin"
+                            app:cardUseCompatPadding="false"
+                            app:cardElevation="@dimen/no_margin"
+                            app:cardCornerRadius="@dimen/margin_small"
+                            app:cardBackgroundColor="@android:color/white">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_40"
+                                    android:layout_height="@dimen/dp_40"
+                                    android:layout_margin="@dimen/margin_small"
+                                    android:adjustViewBounds="true"
+                                    android:contentDescription="@string/app_name"
+                                    app:srcCompat="@drawable/icons8_address_100" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/margin_small"
+                                    android:ellipsize="end"
+                                    android:textSize="@dimen/text_small"
+                                    android:text="@string/find_a_location"
+                                    android:maxLines="3"
+                                    android:textColor="@color/theme_black" />
+                            </LinearLayout>
+                        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/our_partners"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:layout_marginTop="@dimen/margin_standard"
+                    android:textColor="@color/theme_black"
+                    android:textSize="@dimen/text_medium"/>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/progressView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg_white"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showLoader="@{viewModel.apiCallStatus}">
+
+            <ProgressBar
+                android:id="@+id/loader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_large"
+                android:indeterminateTint="@color/theme_red" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
